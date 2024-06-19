@@ -1,21 +1,5 @@
-header {
-    display: flex;
-    align-items: stretch;
-    height: 350px;
-    background-color: #f8f9fa;
-}
-
-header .col {
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
-
-.header {
-    width: 50%;
-    padding-top: 50px;
-    background-image: url('../../../assets/images/OSegredo.png');
-    background-size: 300px;
-    background-repeat: no-repeat;
-    background-position: center;
+.button {
+    padding-top: 20px;
+    text-align: center;
+    height: 120px;
 }
