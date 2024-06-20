@@ -1,6 +1,6 @@
 <div class="container">
-  <form [formGroup]="addressForm" novalidate (ngSubmit)="onSubmit()">
-    <mat-card class="shipping-card">
+  <form [formGroup]="addressForm" novalidate>
+    <mat-card>
       <mat-card-header>
         <mat-card-title>Autorizações Campori</mat-card-title>
       </mat-card-header>
@@ -114,12 +114,8 @@
               </button>
             </div>
           </div>
-
-
-
         </mat-card-actions>
-
-        <div id="print-section">
+        <div id="print-section" style="width: 2450px; height: 3480px;">
           <div>
             <img src="/assets/images/image.png" alt="logo" class="logo" width="100%">
             <h3 style="text-align: center;"><strong>TERMO DE AUTORIZAÇÃO DE VIAGEM E ACAMPAMENTO PARA MENORES</strong>
@@ -171,20 +167,13 @@ text-justify: inter-word;">
           <p style="padding-left: 30px; padding-right: 30px;">
             (Reconhecer firma da assinatura ou assinar pelo Gov.br)
           </p>
-
-
           <br>
           <br>
-
-
           <div style="text-align: center;">
-
             <img src="/assets/images/iasd.png" alt="logo" class="logo">
           </div>
-
         </div>
       </mat-card-content>
     </mat-card>
-
   </form>
 </div>
