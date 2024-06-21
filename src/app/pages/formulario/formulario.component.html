@@ -102,7 +102,9 @@
         <mat-card-actions>
           <div class="action">
             <div class="button">
-              <button mat-fab extended printSectionId="print-section" ngxPrint color="primary">
+              <button mat-fab extended printSectionId="print-section"
+              styleSheetFile="./formulario.print.css'"
+               ngxPrint color="primary">
                 <mat-icon>print</mat-icon>
                 IMPRIMIR
               </button>
@@ -115,15 +117,14 @@
             </div>
           </div>
         </mat-card-actions>
-        <div id="print-section" style="width: 2450px; height: 3480px; @media print { html, body { height: max-content; overflow-y: visible !important; } }">
+        <div id="print-section">
           <div>
             <img src="/assets/images/image.png" alt="" width="100%">
             <h3 style="text-align: center;"><strong>TERMO DE AUTORIZAÇÃO DE VIAGEM E ACAMPAMENTO PARA MENORES</strong>
             </h3>
           </div>
-          <div style="text-align: justify;
-text-justify: inter-word;">
-            <p style="padding-left: 30px; padding-right: 30px;">
+          <div class="text-autorizacao">
+            <p>
               Eu <strong>{{addressForm.value.nomeResp}}</strong>, portador(a) do RG sob n° {{addressForm.value.rgResp}}
               {{addressForm.value.oeResp}} e inscrito(a) no CPF sob n° {{addressForm.value.cpfResp}}, residente e
               domiciliado(a) à {{addressForm.value.endereco}}, declaro para os devidos fins que autorizo meu(minha)
@@ -137,39 +138,39 @@ text-justify: inter-word;">
               DO SÉTIMO DIA, que ocorrerá entre os dias 24 e 28 de julho de 2024, nas dependências da Instituição
               Adventista Brasil Central localizada na BR-414, km 411 - Posse d'Abadia, Abadiânia - GO, 72940-000.
             </p>
-            <p style="padding-left: 30px; padding-right: 30px;">
+            <p>
               Autorizo ainda meu(minha) filho(a) a empreender viagem nacional com destino à Abadiânia - GO na companhia
               de <strong>ROZILENE SANTOS C. AUCÉLIO</strong>, maior de idade, portador(a) do RG sob n° 2366988-8 SSP/MT
               e
               inscrito(a) no CPF sob n° 037.932.451-28. Esta autorização é válida por [Período da Viagem], a partir
               desta data, conforme disposto na Lei Federal Nº 8.069/90, art. 83, § 1º, letra “b”, 2.
             </p>
-            <p style="padding-left: 30px; padding-right: 30px;">
+            <p>
               Declaro também que meu(minha) filho(a) está em perfeitas condições de saúde, estando apto(a) a participar
               das atividades propostas.
             </p>
-            <p style="padding-left: 30px; padding-right: 30px;">
+            <p>
               Autorizo os responsáveis pela organização a tomarem as medidas necessárias para a segurança e bem-estar
               do(a) menor, incluindo a autorização para que, em caso de emergência, meu(minha) filho(a) seja atendido(a)
               em qualquer unidade de saúde, pública ou privada.
             </p>
-            <p style="padding-left: 30px; padding-right: 30px;">
+            <p>
               Declaro que li e concordo com todas as informações e condições mencionadas neste termo de autorização.
-            <p style="padding-left: 30px; padding-right: 30px;">
+            <p>
               Brasília, {{dataHoje()}}.
             </p>
           </div>
-          <p style="padding-left: 30px; padding-right: 30px;">
+          <p>
             ___________________________________</p>
-          <p style="padding-left: 30px; padding-right: 30px; margin-top: 5px;">
+          <p>
             {{addressForm.value.nomeResp}}
           </p>
-          <p style="padding-left: 30px; padding-right: 30px;">
+          <p>
             (Reconhecer firma da assinatura ou assinar pelo Gov.br)
           </p>
           <br>
           <br>
-          <div style="text-align: center;">
+          <div class="logo-iasd">
             <img src="/assets/images/iasd.png" alt="logo" class="logo">
           </div>
         </div>

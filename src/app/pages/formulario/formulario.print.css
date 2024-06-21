@@ -1,0 +1,19 @@
+@media print {
+
+  html,
+  body {
+    height: max-content;
+    overflow-y: visible !important;
+  }
+
+  .text-autorizacao {
+    text-align: justify;
+    text-justify: inter-word;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+
+  .logo-iasd {
+    text-align: center;
+  }
+}
