@@ -1,18 +1,25 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Dados } from '../../model/dados';
 import { MatButtonModule } from '@angular/material/button';
-import { NgxPrintModule } from 'ngx-print';
 
 @Component({
   selector: 'app-autorizacao',
   standalone: true,
-  imports: [MatButtonModule, NgxPrintModule],
+  imports: [MatButtonModule],
   templateUrl: './autorizacao.component.html',
-  styleUrl: './autorizacao.component.css'
-})
-export class AutorizacaoComponent {
+  styleUrl: './autorizacao.component.css',
 
-  @Input() dados: Dados = { nomeResp: '', rgResp: '', oeResp: '', cpfResp: '', endereco: '', nomeDbv: '', dtNascDbv: '', rgDbv: '', oeDbv: '', cpfDbv: '' };  
+})
+export class AutorizacaoComponent implements OnInit {
+
+  formStorage = localStorage;
+
+  dados: Dados = { nomeResp: '', rgResp: '', oeResp: '', cpfResp: '', endereco: '', nomeDbv: '', dtNascDbv: '', rgDbv: '', oeDbv: '', cpfDbv: '' };
+
+  ngOnInit() {
+    let form = this.formStorage.getItem('formulario');
+    this.dados = form ? JSON.parse(form) : this.dados;
+  }
 
   dataHoje() {
     let data = new Date();
