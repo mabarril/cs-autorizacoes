@@ -1,10 +1,12 @@
 import { Component, Input } from '@angular/core';
 import { Dados } from '../../model/dados';
+import { MatButtonModule } from '@angular/material/button';
+import { NgxPrintModule } from 'ngx-print';
 
 @Component({
   selector: 'app-autorizacao',
   standalone: true,
-  imports: [],
+  imports: [MatButtonModule, NgxPrintModule],
   templateUrl: './autorizacao.component.html',
   styleUrl: './autorizacao.component.css'
 })
