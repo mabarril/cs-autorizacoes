@@ -102,9 +102,8 @@
         <mat-card-actions>
           <div class="action">
             <div class="button">
-              <button mat-fab extended printSectionId="print-section"
-              styleSheetFile="./formulario.print.css'"
-               ngxPrint color="primary">
+              <button mat-fab extended printSectionId="print-section" ngxPrint
+                color="primary">
                 <mat-icon>print</mat-icon>
                 IMPRIMIR
               </button>
@@ -117,7 +116,11 @@
             </div>
           </div>
         </mat-card-actions>
-        <div id="print-section">
+        <div id="print-section" style="  width: 500px; height: 800px;
+        text-align: justify;
+        text-justify: inter-word;
+        padding-left: 30px;
+        padding-right: 30px;">>
           <div>
             <img src="/assets/images/image.png" alt="" width="100%">
             <h3 style="text-align: center;"><strong>TERMO DE AUTORIZAÇÃO DE VIAGEM E ACAMPAMENTO PARA MENORES</strong>
@@ -170,7 +173,7 @@
           </p>
           <br>
           <br>
-          <div class="logo-iasd">
+          <div class="logo-iasd" style="  text-align: center;">
             <img src="/assets/images/iasd.png" alt="logo" class="logo">
           </div>
         </div>
