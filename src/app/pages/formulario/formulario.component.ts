@@ -9,23 +9,25 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIcon } from '@angular/material/icon';
 import { NgxPrintModule } from 'ngx-print';
 import { RouterLink } from '@angular/router';
+import { HeaderComponent } from "../../components/header/header.component";
 
 @Component({
-  selector: 'app-formulario',
-  templateUrl: './formulario.component.html',
-  styleUrl: './formulario.component.css',
-  standalone: true,
-  imports: [
-    MatInputModule,
-    MatButtonModule,
-    MatSelectModule,
-    MatRadioModule,
-    MatCardModule,
-    ReactiveFormsModule,
-    NgxPrintModule,
-    MatIcon,
-    RouterLink
-  ]
+    selector: 'app-formulario',
+    templateUrl: './formulario.component.html',
+    styleUrl: './formulario.component.css',
+    standalone: true,
+    imports: [
+        MatInputModule,
+        MatButtonModule,
+        MatSelectModule,
+        MatRadioModule,
+        MatCardModule,
+        ReactiveFormsModule,
+        NgxPrintModule,
+        MatIcon,
+        RouterLink,
+        HeaderComponent
+    ]
 })
 export class FormularioComponent {
   private fb = inject(FormBuilder);
@@ -42,13 +44,11 @@ export class FormularioComponent {
     cpfDbv: [null, Validators.required],
   });
 
-  dataHoje() {
-    let data = new Date();
-    let dia = data.getDate();
-    let mes = (data.getMonth() + 1).toString().padStart(2, '0');
-    let ano = data.getFullYear();
-    return `${dia}/${mes}/${ano}`;
-  }
+
+
+  sendForm() {
+    let dados = this.addressForm.value;
+    console.log(dados)  }
 
   onSubmit(): void {
     alert('Thanks!');
