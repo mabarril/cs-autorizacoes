@@ -1,5 +1,5 @@
-<app-header></app-header>
 <div class="container">
+  <app-header></app-header>
   <form [formGroup]="addressForm" novalidate>
     <mat-card>
       <mat-card-header>
@@ -103,8 +103,9 @@
         <mat-card-actions>
           <div class="action">
             <div class="button">
-              <button mat-fab extended routerLink='/autorizacao' color="primary">
-                  <mat-icon>print</mat-icon>
+              <button mat-fab extended ngxPrint printSectionId="print-section" color="primary">
+                <!-- <button mat-fab extended routerLink='/autorizacao' color="primary"> -->
+                <mat-icon>print</mat-icon>
                 IMPRIMIR
               </button>
             </div>
@@ -118,5 +119,70 @@
         </mat-card-actions>
       </mat-card-content>
     </mat-card>
+    <div id="print-section" style="
+width: 1000px;
+height: 1600px;
+text-align: justify;
+text-justify: inter-word;
+margin-right: 30px;
+padding-left: 30px;
+padding-right: 30px;
+font-size: medium;">
+      <div>
+        <img src="/assets/images/image.png" alt="" width="100%">
+        <h3 style="text-align: center;"><strong>TERMO DE AUTORIZAÇÃO DE VIAGEM E ACAMPAMENTO PARA MENORES</strong>
+        </h3>
+      </div>
+      <div class="text-autorizacao">
+        <p>
+          Eu <strong>{{addressForm.value.nomeResp}}</strong>, portador(a) do RG sob n° {{addressForm.value.rgResp}}
+          {{addressForm.value.oeResp}} e inscrito(a) no CPF sob n° {{addressForm.value.cpfResp}}, residente e
+          domiciliado(a) à {{addressForm.value.endereco}}, declaro para os devidos fins que autorizo meu(minha)
+          filho(a), <strong>{{addressForm.value.nomeDbv}}</strong>, nascido(a) em {{addressForm.value.dtNascDbv}},
+          portador(a) do RG
+          sob n° {{addressForm.value.rgDbv}} {{addressForm.value.oeDbv}} e inscrito(a) no CPF sob n°
+          {{addressForm.value.cpfDbv}}, a ser acomodado(a) em barracas durante o período do acampamento e a
+          participar
+          do evento denominado IV CAMPORI DE DESBRAVADORES organizado pela UNIÃO CENTRO OESTE BRASILEIRA DA IGREJA
+          ADVENTISTA
+          DO SÉTIMO DIA, que ocorrerá entre os dias 24 e 28 de julho de 2024, nas dependências da Instituição
+          Adventista Brasil Central localizada na BR-414, km 411 - Posse d'Abadia, Abadiânia - GO, 72940-000.
+        </p>
+        <p>
+          Autorizo ainda meu(minha) filho(a) a empreender viagem nacional com destino à Abadiânia - GO na companhia
+          de <strong>ROZILENE SANTOS C. AUCÉLIO</strong>, maior de idade, portador(a) do RG sob n° 2366988-8 SSP/MT
+          e
+          inscrito(a) no CPF sob n° 037.932.451-28. Esta autorização é válida por [Período da Viagem], a partir
+          desta data, conforme disposto na Lei Federal Nº 8.069/90, art. 83, § 1º, letra “b”, 2.
+        </p>
+        <p>
+          Declaro também que meu(minha) filho(a) está em perfeitas condições de saúde, estando apto(a) a participar
+          das atividades propostas.
+        </p>
+        <p>
+          Autorizo os responsáveis pela organização a tomarem as medidas necessárias para a segurança e bem-estar
+          do(a) menor, incluindo a autorização para que, em caso de emergência, meu(minha) filho(a) seja atendido(a)
+          em qualquer unidade de saúde, pública ou privada.
+        </p>
+        <p>
+          Declaro que li e concordo com todas as informações e condições mencionadas neste termo de autorização.
+        <p>
+          Brasília, {{dataHoje()}}.
+        </p>
+      </div>
+      <p>
+        ___________________________________</p>
+      <p>
+        {{addressForm.value.nomeResp}}
+      </p>
+      <p>
+        (Reconhecer firma da assinatura ou assinar pelo Gov.br)
+      </p>
+      <br>
+      <br>
+      <div class="logo-iasd" style="  text-align: center;">
+        <img src="/assets/images/iasd.png" alt="logo" class="logo">
+      </div>
+    </div>
   </form>
 </div>
