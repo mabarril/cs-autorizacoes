@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Dados } from '../../model/dados';
 import { MatButtonModule } from '@angular/material/button';
 
+
 @Component({
   selector: 'app-autorizacao',
   standalone: true,
@@ -10,9 +11,11 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './autorizacao.component.css',
 
 })
+
+
 export class AutorizacaoComponent implements OnInit {
 
-  formStorage = localStorage;
+   formStorage = localStorage;
 
   dados: Dados = { nomeResp: '', rgResp: '', oeResp: '', cpfResp: '', endereco: '', nomeDbv: '', dtNascDbv: '', rgDbv: '', oeDbv: '', cpfDbv: '' };
 
@@ -28,4 +31,5 @@ export class AutorizacaoComponent implements OnInit {
     let ano = data.getFullYear();
     return `${dia}/${mes}/${ano}`;
   }
+
 }
