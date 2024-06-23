@@ -1,13 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Dados } from '../../model/dados';
 import { MatButtonModule } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-autorizacao',
   standalone: true,
-  imports: [MatButtonModule],
+  imports: [MatButtonModule, MatIcon],
   templateUrl: './autorizacao.component.html',
   styleUrl: './autorizacao.component.css',
 
