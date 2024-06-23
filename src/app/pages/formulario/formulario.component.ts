@@ -1,4 +1,4 @@
-import { Component, Injectable, inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 
 import { ReactiveFormsModule, FormBuilder, Validators } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
@@ -40,46 +40,7 @@ import html2canvas from 'html2canvas';
 
 export class FormularioComponent {
 
-  USERS = [
-    {
-      "id": 1,
-      "name": "Leanne Graham",
-      "email": "sincere@april.biz",
-      "phone": "1-770-736-8031 x56442"
-    },
-    {
-      "id": 2,
-      "name": "Ervin Howell",
-      "email": "shanna@melissa.tv",
-      "phone": "010-692-6593 x09125"
-    },
-    {
-      "id": 3,
-      "name": "Clementine Bauch",
-      "email": "nathan@yesenia.net",
-      "phone": "1-463-123-4447",
-    },
-    {
-      "id": 4,
-      "name": "Patricia Lebsack",
-      "email": "julianne@kory.org",
-      "phone": "493-170-9623 x156"
-    },
-    {
-      "id": 5,
-      "name": "Chelsey Dietrich",
-      "email": "lucio@annie.ca",
-      "phone": "(254)954-1289"
-    },
-    {
-      "id": 6,
-      "name": "Mrs. Dennis",
-      "email": "karley@jasper.info",
-      "phone": "1-477-935-8478 x6430"
-    }
-  ];
-
-  formStorage = localStorage;
+  dados: Dados = { nomeResp: '', rgResp: '', oeResp: '', cpfResp: '', endereco: '', nomeDbv: '', dtNascDbv: '', rgDbv: '', oeDbv: '', cpfDbv: '' };
 
   private fb = inject(FormBuilder);
   addressForm = this.fb.group({
@@ -104,7 +65,7 @@ export class FormularioComponent {
   }
 
   submit() {
-    let dados: Dados = {
+    this.dados = {
       nomeResp: this.addressForm.get('nomeResp')?.value?.toUpperCase() ?? '',
       rgResp: this.addressForm.get('rgResp')?.value?.toUpperCase() ?? '',
       oeResp: this.addressForm.get('oeResp')?.value?.toUpperCase() ?? '',
@@ -116,8 +77,6 @@ export class FormularioComponent {
       oeDbv: this.addressForm.get('oeDbv')?.value?.toUpperCase() ?? '',
       cpfDbv: this.addressForm.get('cpfDbv')?.value?.toUpperCase() ?? '',
     };
-
-      this.formStorage.setItem('formulario', JSON.stringify(dados));
   }
 
   public openPDF(): void {
@@ -131,8 +90,8 @@ export class FormularioComponent {
       let PDF = new jsPDF('p', 'mm', 'a4');
       let position = 0;
       PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
-
-      PDF.save('angular-demo.pdf');
+      let nomeArquivo = 'Autorização Campori UCOP - ' + this.dados.nomeDbv + '.pdf';
+      PDF.save(nomeArquivo);
     });
   }
 
