@@ -1,5 +1,4 @@
 <div class="container">
-  <app-header></app-header>
   <form [formGroup]="addressForm" novalidate>
     <mat-card>
       <mat-card-header>
@@ -105,7 +104,7 @@
               <!-- <button mat-fab extended ngxPrint printSectionId="print-section" color="primary"> -->
               <button mat-fab extended routerLink='/autorizacao' (click)="submit()" [disabled]="!addressForm.valid" color="primary">
                 <mat-icon>print</mat-icon>
-                IMPRIMIR
+                GERAR AUTORIZAÇÃO
               </button>
             </div>
             <div class="button">

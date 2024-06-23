@@ -1,6 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Dados } from '../../model/dados';
 import { MatButtonModule } from '@angular/material/button';
+import jsPDF from 'jspdf';
+import html2canvas from 'html2canvas';
 
 @Component({
   selector: 'app-autorizacao',
@@ -27,5 +29,21 @@ export class AutorizacaoComponent implements OnInit {
     let mes = (data.getMonth() + 1).toString().padStart(2, '0');
     let ano = data.getFullYear();
     return `${dia}/${mes}/${ano}`;
+  }
+
+  public openPDF(): void {
+    let DATA: any = document.getElementById('print-section');
+
+    html2canvas(DATA).then((canvas) => {
+      let fileWidth = 208;
+      let fileHeight = (canvas.height * fileWidth) / canvas.width;
+
+      const FILEURI = canvas.toDataURL('image/png');
+      let PDF = new jsPDF('p', 'mm', 'a4');
+      let position = 0;
+      PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
+
+      PDF.save('Autorização - Campori UCO - ' + this.dados.nomeDbv + '.pdf');
+    });
   }
 }
