@@ -1,3 +1,10 @@
+<div class="button">
+  <!-- <button mat-fab extended ngxPrint printSectionId="print-section" color="primary"> -->
+  <button mat-fab extended (click)="openPDF()" color="primary">
+    <mat-icon>download</mat-icon>
+    BAIXAR PDF
+  </button>
+</div>
 <div id="print-section" style="
 width: 1000px;
 height: 1500px;
@@ -65,12 +72,4 @@ font-size: large;">
   <div class="logo-iasd" style="  text-align: center;">
     <img src="/assets/images/iasd.png" alt="logo" class="logo">
   </div>
-</div>
-
-<div class="button">
-  <!-- <button mat-fab extended ngxPrint printSectionId="print-section" color="primary"> -->
-  <button mat-fab extended (click)="openPDF()" color="primary">
-    <mat-icon>download</mat-icon>
-    BAIXAR PDF
-  </button>
 </div>
