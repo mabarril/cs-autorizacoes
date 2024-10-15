@@ -2,7 +2,7 @@
   <form [formGroup]="addressForm" novalidate>
     <mat-card>
       <mat-card-header>
-        <mat-card-title>Autorizações Campori</mat-card-title>
+        <mat-card-title>Autorizações de Saída Desbravadores</mat-card-title>
       </mat-card-header>
       <mat-card-content>
         <div class="row">
@@ -44,9 +44,9 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Endereço" formControlName="endereco">
-              @if (addressForm.controls['endereco'].hasError('required')) {
-              <mat-error>Endereço é <strong>obrigatório</strong></mat-error>
+              <input matInput placeholder="Celular" formControlName="telefoneResp" mask="(00) 00000-0000">
+              @if (addressForm.controls['telefoneResp'].hasError('required')) {
+              <mat-error>Celular é <strong>obrigatório</strong></mat-error>
               }
             </mat-form-field>
           </div>
@@ -64,10 +64,17 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Data de nascimento do desbravador" mask="00/00/0000"
-                formControlName="dtNascDbv">
-              @if (addressForm.controls['dtNascDbv'].hasError('required')) {
-              <mat-error>Data de nascimento é <strong>obrigatório</strong></mat-error>
+              <mat-select placeholder="Tipo Sanguíneo e Fator RH" formControlName="tpSanguineo">
+                @for (tipo of tiposSanguineos; track tipo) {
+                <mat-option [value]="tipo">
+                  {{ tipo }}
+                </mat-option>
+                }
+              </mat-select>
+              @if( addressForm.controls['tpSanguineo'].hasError('required')) {
+              <mat-error>
+                Tipo Sanguíneo e Fator RH é <strong>obrigatório</strong>
+              </mat-error>
               }
             </mat-form-field>
           </div>
@@ -98,6 +105,14 @@
             </mat-form-field>
           </div>
         </div>
+        <div class="row">
+          <mat-form-field class="full-width">
+            <textarea matInput placeholder="Gostaria de registrar alguma observação?"
+              formControlName="observacao?"></textarea>
+          </mat-form-field>
+
+        </div>
+
         <mat-card-actions>
           <div class="action">
             <div class="button">

@@ -17,7 +17,7 @@ export class AutorizacaoComponent implements OnInit {
 
   formStorage = localStorage;
 
-  dados: Dados = { nomeResp: '', rgResp: '', oeResp: '', cpfResp: '', endereco: '', nomeDbv: '', dtNascDbv: '', rgDbv: '', oeDbv: '', cpfDbv: '' };
+  dados: Dados = { nomeResp: '', rgResp: '', oeResp: '', cpfResp: '', telefoneResp: '', nomeDbv: '', tpSanguineo: '', rgDbv: '', oeDbv: '', cpfDbv: '', observacao: '' };
 
   ngOnInit() {
     let form = this.formStorage.getItem('formulario');

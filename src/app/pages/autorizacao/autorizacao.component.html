@@ -19,40 +19,47 @@ line-height: 1.5em;
 font-size: large;">
   <div>
     <img src="/assets/images/image.png" alt="" width="100%">
-    <h3 style="text-align: center;"><strong>TERMO DE AUTORIZAÇÃO DE VIAGEM E ACAMPAMENTO PARA MENORES</strong>
-    </h3>
+    <h3 style="text-align: center;"><strong>AUTORIZAÇÃO PARA ATIVIDADE EXTERNA - ACAMPAMENTO</strong> </h3>
+    <h5 style="text-align: center;">CLUBE DE DESBRAVADORES CRUZEIRO DO SUL</h5>
+    <h5 style="text-align: center;">IASD CENTRAL DE BRASÍLIA - DF</h5>
   </div>
   <div class="text-autorizacao">
     <p style="padding-left : 1.5em; padding-top: 1em;">
       Eu <strong>{{dados.nomeResp}}</strong>, portador(a) do RG sob n° {{dados.rgResp}}
-      {{dados.oeResp}} e inscrito(a) no CPF sob n° {{dados.cpfResp}}, residente e
-      domiciliado(a) à {{dados.endereco}}, declaro para os devidos fins que autorizo meu(minha)
-      filho(a), <strong>{{dados.nomeDbv}}</strong>, nascido(a) em {{dados.dtNascDbv}},
-      portador(a) do RG
-      sob n° {{dados.rgDbv}} {{dados.oeDbv}} e inscrito(a) no CPF sob n°
-      {{dados.cpfDbv}}, a ser acomodado(a) em barracas durante o período do acampamento e a
-      participar
-      do evento denominado IV CAMPORI DE DESBRAVADORES organizado pela UNIÃO CENTRO OESTE BRASILEIRA DA IGREJA
-      ADVENTISTA
-      DO SÉTIMO DIA, que ocorrerá entre os dias 24 e 28 de julho de 2024, nas dependências da Instituição
-      Adventista Brasil Central localizada na BR-414, km 411 - Posse d'Abadia, Abadiânia - GO, 72940-000.
+      {{dados.oeResp}} e inscrito(a) no CPF sob n° {{dados.cpfResp}},
+      declaro para os devidos fins que autorizo meu(minha) filho(a) a ser acomodado(a)
+      em barracas durante o período do acampamento e a participar do
+      Acampamento de Desbravadores, organizado pelo Clube Cruzeiro do Sul da IASD
+      Central de Brasília, que ocorrerá nos dias 18, 19 e 20 de outubro de 2024,
+      ]nas dependências da Chácara Ninho da Águia
+      (Núcleo Rural Boqueirão - Paranoá, Brasília – DF).
     </p>
     <p style="padding-left : 1.5em; padding-top: 1em;">
-      Autorizo ainda meu(minha) filho(a) a empreender viagem nacional com destino à Abadiânia - GO na companhia
-      de <strong>ROZILENE SANTOS C. AUCÉLIO</strong>, maior de idade, portador(a) do RG sob n° 2366988-8 SSP/MT
-      e inscrito(a) no CPF sob n° 037.932.451-28. Esta autorização é válida de 24 a 29 de julho de 2024, conforme disposto na Lei Federal Nº 8.069/90, art. 83, § 1º, letra “b”, 2.
+      Declaro também que meu(minha) filho(a) está em perfeitas condições de saúde,
+      estando apto(a) a participar das atividades propostas. Abdico judicialmente nesta,
+      toda a liderança do clube de Desbravadores por qualquer dano causado a meu filho
+      por sua própria atuação. Havendo necessidade, autorizo o atendimento, inclusive
+      intervenção médica, para restabelecimento de sua saúde.
     </p>
     <p style="padding-left : 1.5em; padding-top: 1em;">
-      Declaro também que meu(minha) filho(a) está em perfeitas condições de saúde, estando apto(a) a participar
-      das atividades propostas.
+      1. Nome completo do desbravador: <strong>{{dados.nomeDbv}}</strong>
     </p>
     <p style="padding-left : 1.5em; padding-top: 1em;">
-      Autorizo os responsáveis pela organização a tomarem as medidas necessárias para a segurança e bem-estar
-      do(a) menor, incluindo a autorização para que, em caso de emergência, meu(minha) filho(a) seja atendido(a)
-      em qualquer unidade de saúde, pública ou privada.
+      2. Tipo sanguíneo: <strong>{{dados.tpSanguineo}}</strong>
     </p>
     <p style="padding-left : 1.5em; padding-top: 1em;">
-      Declaro que li e concordo com todas as informações e condições mencionadas neste termo de autorização.
+      3. RG: <strong>{{dados.rgDbv}}</strong> CPF: <strong>{{dados.cpfDbv}}</strong>
+    </p>
+    <p style="padding-left : 1.5em; padding-top: 1em;">
+      4. Telefone do Pai/Mãe ou Responsável: <strong>{{dados.telefoneResp}}</strong>
+    </p>
+    <p style="padding-left : 1.5em; padding-top: 1em;">
+      Observações: <strong>{{dados.observacao}}</strong>
+    </p>
+
+    <p style="padding-left : 1.5em; padding-top: 1em;">
+      Declaro, por fim, que li e concordo com todas as informações e condições mencionadas neste termo de autorização.
+    </p>
     <p style="padding: 1.5em;">
       Brasília, {{dataHoje()}}.
     </p>
@@ -62,9 +69,7 @@ font-size: large;">
   <p style="padding-left: 1.5em; margin-top: -1em;">
     {{dados.nomeResp}}
   </p>
-  <p style="padding-left : 1.5em; padding-top: -1em;">
-    (Reconhecer firma da assinatura ou assinar pelo Gov.br)
-  </p>
+
   <br>
   <br>
   <div class="logo-iasd" style="  text-align: center;">

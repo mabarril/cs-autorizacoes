@@ -3,10 +3,11 @@ export interface Dados {
     rgResp: string;
     oeResp: string;
     cpfResp: string;
-    endereco: string;
+    telefoneResp: string;
     nomeDbv: string;
-    dtNascDbv: string;
     rgDbv: string;
     oeDbv: string;
     cpfDbv: string;
+    tpSanguineo: string;
+    observacao?: string;
 }

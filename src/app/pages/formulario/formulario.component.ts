@@ -41,18 +41,20 @@ export class FormularioComponent {
 
   formStorage = localStorage;
 
+  tiposSanguineos: string[] = ['A+', 'A-', 'B+', 'B-', 'AB+', 'AB-', 'O+', 'O-'];
+
   private fb = inject(FormBuilder);
   addressForm = this.fb.group({
     nomeResp: ['', [Validators.required]],
     rgResp: ['', Validators.required],
     oeResp: ['', Validators.required],
     cpfResp: ['', Validators.required],
-    endereco: ['', Validators.required],
+    telefoneResp: ['', Validators.required],
     nomeDbv: ['', Validators.required],
-    dtNascDbv: ['', Validators.required],
     rgDbv: ['', Validators.required],
     oeDbv: ['', Validators.required],
     cpfDbv: ['', Validators.required],
+    tpSanguineo: ['', Validators.required],
   });
 
   dataHoje() {
@@ -69,12 +71,12 @@ export class FormularioComponent {
       rgResp: this.addressForm.get('rgResp')?.value?.toUpperCase() ?? '',
       oeResp: this.addressForm.get('oeResp')?.value?.toUpperCase() ?? '',
       cpfResp: this.addressForm.get('cpfResp')?.value?.toUpperCase() ?? '',
-      endereco: this.addressForm.get('endereco')?.value?.toUpperCase() ?? '',
+      telefoneResp: this.addressForm.get('telefoneResp')?.value?.toUpperCase() ?? '',
       nomeDbv: this.addressForm.get('nomeDbv')?.value?.toUpperCase() ?? '',
-      dtNascDbv: this.addressForm.get('dtNascDbv')?.value?.toUpperCase() ?? '',
       rgDbv: this.addressForm.get('rgDbv')?.value?.toUpperCase() ?? '',
       oeDbv: this.addressForm.get('oeDbv')?.value?.toUpperCase() ?? '',
       cpfDbv: this.addressForm.get('cpfDbv')?.value?.toUpperCase() ?? '',
+      tpSanguineo: this.addressForm.get('tpSanguineo')?.value?.toUpperCase() ?? '',
     };
 
       this.formStorage.setItem('formulario', JSON.stringify(dados));

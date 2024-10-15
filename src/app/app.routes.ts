@@ -7,5 +7,5 @@ export const routes: Routes = [
     { path: 'home', component: HomeComponent },
     { path: 'formulario', component: FormularioComponent },
     { path: 'autorizacao', component: AutorizacaoComponent },
-    { path: '', redirectTo: 'home', pathMatch: 'full' },
+    { path: '', redirectTo: 'formulario', pathMatch: 'full' },
 ];
