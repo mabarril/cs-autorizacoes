@@ -55,6 +55,7 @@ export class FormularioComponent {
     oeDbv: ['', Validators.required],
     cpfDbv: ['', Validators.required],
     tpSanguineo: ['', Validators.required],
+    observacao: [''],
   });
 
   dataHoje() {
@@ -77,6 +78,7 @@ export class FormularioComponent {
       oeDbv: this.addressForm.get('oeDbv')?.value?.toUpperCase() ?? '',
       cpfDbv: this.addressForm.get('cpfDbv')?.value?.toUpperCase() ?? '',
       tpSanguineo: this.addressForm.get('tpSanguineo')?.value?.toUpperCase() ?? '',
+      observacao: this.addressForm.get('observacao')?.value?.toUpperCase() ?? '',
     };
 
       this.formStorage.setItem('formulario', JSON.stringify(dados));

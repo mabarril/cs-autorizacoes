@@ -44,7 +44,7 @@ export class AutorizacaoComponent implements OnInit {
       let position = 0;
       PDF.addImage(FILEURI, 'PNG', 0, position, fileWidth, fileHeight);
 
-      PDF.save('IV Campori UCOB - Autorização - ' + this.dados.nomeDbv + '.pdf');
+      PDF.save(this.dados.nomeDbv + ' - Autorização de saída.pdf');
     });
   }
 }

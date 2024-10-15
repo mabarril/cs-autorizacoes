@@ -1,14 +1,12 @@
 <div class="container">
   <form [formGroup]="addressForm" novalidate>
     <mat-card>
-      <mat-card-header>
-        <mat-card-title>Autorizações de Saída Desbravadores</mat-card-title>
-      </mat-card-header>
       <mat-card-content>
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Nome completo responsável" formControlName="nomeResp">
+              <mat-label>Nome completo responsável</mat-label>
+              <input matInput formControlName="nomeResp">
               @if (addressForm.controls['nomeResp'].hasError('required')) {
               <mat-error>Nome do responsável é <strong>obrigatório</strong></mat-error>
               }
@@ -18,7 +16,8 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="RG" formControlName="rgResp">
+              <mat-label>RG</mat-label>
+              <input matInput formControlName="rgResp">
               @if (addressForm.controls['rgResp'].hasError('required')) {
               <mat-error>RG é <strong>obrigatório</strong></mat-error>
               }
@@ -26,16 +25,9 @@
           </div>
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Orgão emissor" formControlName="oeResp">
+              <mat-label>Orgão emissor</mat-label>
+              <input matInput formControlName="oeResp">
               @if (addressForm.controls['oeResp'].hasError('required')) {
-              <mat-error>Orgão emissor é <strong>obrigatório</strong></mat-error>
-              }
-            </mat-form-field>
-          </div>
-          <div class="col">
-            <mat-form-field class="full-width">
-              <input matInput placeholder="CPF" formControlName="cpfResp" mask="000.000.000-00">
-              @if (addressForm.controls['cpfResp'].hasError('required')) {
               <mat-error>Orgão emissor é <strong>obrigatório</strong></mat-error>
               }
             </mat-form-field>
@@ -44,7 +36,17 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Celular" formControlName="telefoneResp" mask="(00) 00000-0000">
+              <mat-label>CPF</mat-label>
+              <input matInput placeholder="000.000.000-00" formControlName="cpfResp" mask="000.000.000-00">
+              @if (addressForm.controls['cpfResp'].hasError('required')) {
+              <mat-error>Orgão emissor é <strong>obrigatório</strong></mat-error>
+              }
+            </mat-form-field>
+          </div>
+          <div class="col">
+            <mat-form-field class="full-width">
+              <mat-label>Celular</mat-label>
+              <input matInput placeholder="(00) 00000-0000" formControlName="telefoneResp" mask="(00) 00000-0000">
               @if (addressForm.controls['telefoneResp'].hasError('required')) {
               <mat-error>Celular é <strong>obrigatório</strong></mat-error>
               }
@@ -54,7 +56,8 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Nome do desbravador" formControlName="nomeDbv">
+              <mat-label>Nome do desbravador</mat-label>
+              <input matInput formControlName="nomeDbv">
               @if (addressForm.controls['nomeDbv'].hasError('required')) {
               <mat-error>Nome do desbravador é <strong>obrigatório</strong></mat-error>
               }
@@ -64,7 +67,8 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <mat-select placeholder="Tipo Sanguíneo e Fator RH" formControlName="tpSanguineo">
+              <mat-label>Tipo sanguíneo</mat-label>
+              <mat-select formControlName="tpSanguineo">
                 @for (tipo of tiposSanguineos; track tipo) {
                 <mat-option [value]="tipo">
                   {{ tipo }}
@@ -80,7 +84,8 @@
           </div>
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="CPF do desbravador" formControlName="cpfDbv" mask="000.000.000-00">
+              <mat-label>CPF do desbravador</mat-label>
+              <input matInput placeholder="000.000.000-00" formControlName="cpfDbv" mask="000.000.000-00">
               @if (addressForm.controls['cpfDbv'].hasError('required')) {
               <mat-error>CPF é <strong>obrigatório</strong></mat-error>
               }
@@ -90,7 +95,8 @@
         <div class="row">
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="RG do desbravador" formControlName="rgDbv">
+              <mat-label>RG do desbravador</mat-label>
+              <input matInput formControlName="rgDbv">
               @if (addressForm.controls['rgDbv'].hasError('required')) {
               <mat-error>RG é <strong>obrigatório</strong></mat-error>
               }
@@ -98,7 +104,8 @@
           </div>
           <div class="col">
             <mat-form-field class="full-width">
-              <input matInput placeholder="Orgão emissor do RG do desbravador" formControlName="oeDbv">
+              <mat-label>Orgão emissor</mat-label>
+              <input matInput formControlName="oeDbv">
               @if (addressForm.controls['oeDbv'].hasError('required')) {
               <mat-error>Orgão emissor é <strong>obrigatório</strong></mat-error>
               }
@@ -108,7 +115,7 @@
         <div class="row">
           <mat-form-field class="full-width">
             <textarea matInput placeholder="Gostaria de registrar alguma observação?"
-              formControlName="observacao?"></textarea>
+              formControlName="observacao"></textarea>
           </mat-form-field>
 
         </div>
@@ -123,12 +130,12 @@
                 AUTORIZAÇÃO
               </button>
             </div>
-            <div class="button">
+            <!-- <div class="button">
               <button mat-fab extended routerLink='/home' color="secondary">
                 <mat-icon>home</mat-icon>
                 VOLTAR
               </button>
-            </div>
+            </div> -->
           </div>
         </mat-card-actions>
       </mat-card-content>

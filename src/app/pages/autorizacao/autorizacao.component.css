@@ -1,0 +1,8 @@
+.logo-clube {
+padding-top: 50px;
+  width: 200px;
+  margin: 0 auto;
+  display: block;
+  display: flex;
+    justify-content: center;
+}
